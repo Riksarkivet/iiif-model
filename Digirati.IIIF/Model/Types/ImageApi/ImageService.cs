@@ -20,10 +20,10 @@ namespace Digirati.IIIF.Model.Types.ImageApi
         }
 
         [JsonProperty(Order = 35, PropertyName = "height")]
-        public int Height { get; set; }
+        public int? Height { get; set; }
 
         [JsonProperty(Order = 36, PropertyName = "width")]
-        public int Width { get; set; }
+        public int? Width { get; set; }
 
 
         [JsonProperty(Order = 37, PropertyName = "sizes")]
