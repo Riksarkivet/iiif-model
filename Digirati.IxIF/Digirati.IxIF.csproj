@@ -151,6 +151,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtensionUriPatterns.cs" />
     <Compile Include="Model\ElementBase.cs" />
     <Compile Include="Model\IMediaElementService.cs" />
     <Compile Include="Model\ManifestWithMediaSequences.cs" />
@@ -164,6 +165,8 @@
     <Compile Include="Model\MediaSequence.cs" />
     <Compile Include="Model\TranscriptAnnotation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UVExtensions\AcceptTermsService.cs" />
+    <Compile Include="UVExtensions\UserInterfaceHints.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Digirati.IIIF\Digirati.IIIF.csproj">

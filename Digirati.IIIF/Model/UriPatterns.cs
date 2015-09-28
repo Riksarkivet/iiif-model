@@ -38,9 +38,7 @@ namespace Digirati.IIIF.Model
         // X extensions:
         public const string Element = "{scheme}://{host}/{prefix}/{identifier}/element/{name}";
         public const string TranscriptAnnotation = "{scheme}://{host}/{prefix}/{identifier}/transcript/{name}";
-
-        public const string IxIFContext = "http://wellcomelibrary.org/ld/ixif/0/context.json";
-        public const string ExtContext = "http://wellcomelibrary.org/ld/iiif-ext/0/context.json";
+        
         public const string MediaElementService = "{scheme}://{host}/iiif-media/{identifier}-{seqIndex}/{name}";
         public const string MediaElementServiceProfile = "http://wellcomelibrary.org/ld/ixif/0/alpha.json";
 

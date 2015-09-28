@@ -14,20 +14,14 @@ namespace Digirati.IIIF.Model.Extension
         [JsonProperty(Order = 10, PropertyName = "within")]
         public SearchResultsLayer Within { get; set; }
 
-        [JsonProperty(Order = 12, PropertyName = "prev")]
-        public string Prev { get; set; }
+        [JsonProperty(Order = 12, PropertyName = "previous")]
+        public string Previous { get; set; }
 
         [JsonProperty(Order = 13, PropertyName = "next")]
         public string Next { get; set; }
-
-        [JsonProperty(Order = 14, PropertyName = "first")]
-        public string First { get; set; }
-
-        [JsonProperty(Order = 15, PropertyName = "last")]
-        public string Last { get; set; }
-
+        
         [JsonProperty(Order = 16, PropertyName = "startIndex")]
-        public int startIndex { get; set; }
+        public int StartIndex { get; set; }
 
         [JsonProperty(Order = 30, PropertyName = "hits")]
         public Hit[] Hits { get; set; }

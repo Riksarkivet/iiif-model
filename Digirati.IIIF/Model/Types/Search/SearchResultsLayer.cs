@@ -18,6 +18,13 @@ namespace Digirati.IIIF.Model.Extension
         public int Total { get; set; }
 
 
+        [JsonProperty(Order = 14, PropertyName = "first")]
+        public string First { get; set; }
+
+        [JsonProperty(Order = 15, PropertyName = "last")]
+        public string Last { get; set; }
+
+
         [JsonProperty(Order = 20, PropertyName = "ignored")]
         public string[] Ignored { get; set; }
     }
