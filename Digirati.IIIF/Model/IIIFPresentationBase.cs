@@ -8,13 +8,13 @@ namespace Digirati.IIIF.Model
     public abstract class IIIFPresentationBase : JSONLDBase
     {
         [JsonProperty(Order = 11, PropertyName = "label")]
-        public MetaDataValue Label { get; set; }
+        public MetaDataValue[] Label { get; set; }
 
         [JsonProperty(Order = 12, PropertyName = "metadata")]
         public Metadata[] Metadata { get; set; }
 
         [JsonProperty(Order = 14, PropertyName = "description")]
-        public MetaDataValue Description { get; set; }
+        public MetaDataValue[] Description { get; set; }
 
         [JsonProperty(Order = 15, PropertyName = "thumbnail")]
         public dynamic Thumbnail { get; set; }

@@ -37,6 +37,8 @@ namespace Digirati.IIIF.Serialisation
                     writer.WriteStartObject();
                     writer.WritePropertyName("@value");
                     writer.WriteValue(lv.Value);
+                    writer.WritePropertyName("@language");
+                    writer.WriteValue(lv.Language);
                     writer.WriteEndObject();
                 }
             }

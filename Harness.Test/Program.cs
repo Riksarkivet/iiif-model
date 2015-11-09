@@ -21,13 +21,13 @@ namespace Harness.Test
             {
                 Context = "http://iiif.io/api/presentation/2/context.json",
                 Id = "2ceafb89-8d6a-409e-9ff7-f57fe1866f3a",
-                Label = new MetaDataValue("Monsters"),
+                Label = new MetaDataValue[] { new MetaDataValue("Monsters") },
                 Metadata = new Metadata[]
                 {
                     new Metadata
                     {
-                        Label = new MetaDataValue("label"),
-                        Value = new MetaDataValue("hello")
+                        Label = new MetaDataValue[] { new MetaDataValue("label") },
+                        Value = new MetaDataValue[] { new MetaDataValue("hello") }
                     },
                 },
                 Sequences = new Sequence[]
@@ -35,7 +35,7 @@ namespace Harness.Test
                     new Sequence
                     {
                         Id = "http://www.fractos.com/iiif/monster/2ceafb89-8d6a-409e-9ff7-f57fe1866f3a/sequence/s0",
-                        Label = new MetaDataValue("Sequence s0"),
+                        Label = new MetaDataValue[] { new MetaDataValue("Sequence s0") } ,
                         ViewingHint = "paged",
                         Canvases = new Canvas[]
                         {
@@ -43,7 +43,7 @@ namespace Harness.Test
                             {
                                 Id =
                                     "http://www.fractos.com/iiif/monster/2ceafb89-8d6a-409e-9ff7-f57fe1866f3a/canvas/c0",
-                                Label = new MetaDataValue(" - "),
+                                Label = new MetaDataValue[] { new MetaDataValue(" - ") },
                                 Thumbnail =
                                     "http://www.fractos.com/iiif/monster/thumbnails/bookofmonsters00smfair_0000.jpg",
                                 Height = 4368,
@@ -78,7 +78,7 @@ namespace Harness.Test
                     new Range
                     {
                         Id = "http://www.fractos.com/iiif/monster/2ceafb89-8d6a-409e-9ff7-f57fe1866f3a/range/r-0",
-                        Label = new MetaDataValue("Front Cover"),
+                        Label = new MetaDataValue[] { new MetaDataValue("Front Cover") },
                         Canvases = new string[]
                         {
                             "http://www.fractos.com/iiif/monster/2ceafb89-8d6a-409e-9ff7-f57fe1866f3a/canvas/c0"
