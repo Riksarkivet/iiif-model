@@ -12,5 +12,9 @@ namespace Digirati.IIIF.Model.Types.ImageApi
 
         [JsonProperty(Order = 3, PropertyName = "supports")]
         public string[] Supports { get; set; }
+
+        // 2.1
+        [JsonProperty(Order = 4, PropertyName = "maxWidth")]
+        public int MaxWidth { get; set; }
     }
 }

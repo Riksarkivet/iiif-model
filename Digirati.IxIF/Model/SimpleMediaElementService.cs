@@ -12,6 +12,10 @@ namespace Digirati.IIIF.Model
         [JsonProperty(Order = 39, PropertyName = "profile")]
         public dynamic Profile { get; set; }
 
+        [JsonProperty(Order = 59, PropertyName = "label")]
+        public string Label { get; set; }
+
+        [JsonProperty(Order = 99, PropertyName = "service")]
         public dynamic Service { get; set; }
     }
 }

@@ -16,5 +16,9 @@ namespace Digirati.IIIF.Model.Types
         [JsonProperty(Order = 20, PropertyName = "label")]
         public MetaDataValue Label { get; set; }
 
+        [JsonProperty(Order = 99, PropertyName = "service")]
+        [JsonConverter(typeof(ServiceSerialiser))]
+        public dynamic Service { get; set; } // object or array of objects
+
     }
 }

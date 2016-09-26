@@ -7,9 +7,9 @@ namespace Digirati.IIIF.Model
     /// </summary>
     public class ElementBase : IIIFPresentationBase
     {
-    //    [JsonProperty(Order = 60, PropertyName = "transcriptions")]
-    //    public TranscriptAnnotation[] Transcriptions { get; set; }
-
+        [JsonProperty(Order = 10, PropertyName = "format")]
+        public string Format { get; set; }
+     
         // this already exists as sc:hasAnnotations
         [JsonProperty(Order = 60, PropertyName = "resources")]
         public IAnnotation[] Resources { get; set; }

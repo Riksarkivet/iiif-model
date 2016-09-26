@@ -2,8 +2,10 @@
 
 namespace Digirati.IIIF.Model.Types.Auth
 {
-    public class Token
+    public class Token : ITokenResponse
     {
+        public string MessageId { get; set; }
+
         [JsonProperty(Order = 1, PropertyName = "accessToken")]
         public string AccessToken { get; set;}
 
@@ -12,5 +14,6 @@ namespace Digirati.IIIF.Model.Types.Auth
 
         [JsonProperty(Order = 3, PropertyName = "expiresIn")]
         public int ExpiresIn { get; set;}
+
     }
 }

@@ -12,12 +12,18 @@ namespace Digirati.IIIF.UVExtensions
         }
         public override dynamic Profile
         {
-            get { return "http://universalviewer.azurewebsites.net/ui-extensions-profile"; }
+            get { return "http://universalviewer.io/ui-extensions-profile"; }
         }
 
 
         // do we need an extra setting to tell a viewer whether it can "pull through" (import into interface)?
         [JsonProperty(Order = 102, PropertyName = "manifestType")]
         public string ManifestType { get; set; }
+        
+        [JsonProperty(Order = 104, PropertyName = "suppressMetadata")]
+        public string[] SuppressMetadata { get; set; }
+
+        [JsonProperty(Order = 110, PropertyName = "disableUI")]
+        public string[] DisableUI { get; set; }
     }
 }

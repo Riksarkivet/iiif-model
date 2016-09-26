@@ -6,10 +6,16 @@ namespace Digirati.IIIF.Model
     {
         public const string IIIF2PreziContext = "http://iiif.io/api/presentation/2/context.json";
         public const string IIIF2ImageContext = "http://iiif.io/api/image/2/context.json";
+        public const string IIIFAuthContext = "http://iiif.io/api/auth/0/context.json";
+        public const string IIIFSearchContext = "http://iiif.io/api/search/0/context.json";
 
         public const string ImageServiceProfile = "http://iiif.io/api/image/2/level1.json";
         public const string ImageServiceLevel0Profile = "http://iiif.io/api/image/2/level0.json";
         public const string LoginServiceProfile = "http://iiif.io/api/auth/0/login";
+        public const string LoginClickthroughServiceProfile090 = "http://iiif.io/api/auth/0/login/clickthrough";
+        public const string LoginClickthroughServiceProfile093 = "http://iiif.io/api/auth/0/clickthrough";
+        public const string LoginExternalServiceProfile090 = "http://iiif.io/api/auth/0/login/restricted";
+        public const string LoginExternalServiceProfile093 = "http://iiif.io/api/auth/0/external";
         public const string LogoutServiceProfile = "http://iiif.io/api/auth/0/logout";
         public const string AuthTokenServiceProfile = "http://iiif.io/api/auth/0/token";
 
@@ -34,6 +40,8 @@ namespace Digirati.IIIF.Model
         public const string OcrAltoContent = "{scheme}://{host}/{prefix}/{identifier}/contentAsText/{name}";
         public const string TextLineAnnotation = "{scheme}://{host}/{prefix}/{identifier}/annos/contentAsText/{name}";
         public const string SearchResultAnnotation = "{scheme}://{host}/{prefix}/{identifier}/annos/searchResults/{name}";
+        public const string ManifestLevelService = "{scheme}://{host}/{prefix}/{identifier}-{seqIndex}/{name}-service";
+
 
         // X extensions:
         public const string Element = "{scheme}://{host}/{prefix}/{identifier}/element/{name}";
@@ -44,6 +52,7 @@ namespace Digirati.IIIF.Model
 
         // Transition
         public const string WellcomeThumbs = "{scheme}://{host}";
+        public const string WellcomeThumbsTemplate = "{scheme}://{host}/thumbs/{identifier}/{seqIndex}/{name}.jpg";
 
 
         public static string WithIdentifier(this string s, string identifier)

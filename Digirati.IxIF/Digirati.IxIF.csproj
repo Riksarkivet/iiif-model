@@ -165,7 +165,8 @@
     <Compile Include="Model\MediaSequence.cs" />
     <Compile Include="Model\TranscriptAnnotation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UVExtensions\AcceptTermsService.cs" />
+    <Compile Include="UVExtensions\AccessControlHints.cs" />
+    <Compile Include="UVExtensions\TrackingData.cs" />
     <Compile Include="UVExtensions\UserInterfaceHints.cs" />
   </ItemGroup>
   <ItemGroup>

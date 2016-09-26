@@ -151,9 +151,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\ServiceBag.cs" />
     <Compile Include="Fluent\ExtensionMethods.cs" />
     <Compile Include="Model\AnnotationListReference.cs" />
     <Compile Include="Model\Extension\PresentationAnnotationList.cs" />
+    <Compile Include="Model\Types\Auth\AccessCookieService.cs" />
+    <Compile Include="Model\Types\Auth\ITokenResponse.cs" />
     <Compile Include="Model\Types\Search\Hit.cs" />
     <Compile Include="Model\Types\Search\IHasIgnorableParameters.cs" />
     <Compile Include="Model\Types\Search\SearchResultAnnotation.cs" />

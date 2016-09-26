@@ -31,15 +31,16 @@ namespace Digirati.IIIF.Model
         [JsonProperty(Order = 24, PropertyName = "rendering")]
         public dynamic Rendering { get; set; }
 
-        [JsonProperty(Order = 25, PropertyName = "seeAlso")]
+        [JsonProperty(Order = 25, PropertyName = "related")]
+        public Resource Related { get; set; }
+
+        [JsonProperty(Order = 26, PropertyName = "seeAlso")]
         public Resource SeeAlso { get; set; }
 
-        [JsonProperty(Order = 26, PropertyName = "service")]
+        [JsonProperty(Order = 27, PropertyName = "service")]
         [JsonConverter(typeof(ServiceSerialiser))]
         public dynamic Service { get; set; } // object or array of objects
 
-        [JsonProperty(Order = 27, PropertyName = "related")]
-        public Resource Related { get; set; }
 
         [JsonProperty(Order = 30, PropertyName = "viewingHint")]
         public string ViewingHint { get; set; }
