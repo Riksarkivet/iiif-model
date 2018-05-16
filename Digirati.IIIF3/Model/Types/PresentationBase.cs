@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Digirati.IIIF3.Model.JSONLD;
+using Newtonsoft.Json;
 
 namespace Digirati.IIIF3.Model.Types
 {
     public abstract class PresentationBase : JSONLDBase, IPresentationResource
     {
-        public List<JSONLDString> Label { get; set; }
-        
+        [JsonProperty(Order = 11)]
+        public JSONLDString Label { get; set; }
+
+        [JsonProperty(Order = 12)]
         public List<Metadata> Metadata { get; set; }
         
         public List<JSONLDString> Description { get; set; }

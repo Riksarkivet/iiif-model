@@ -9,7 +9,7 @@ namespace Digirati.IIIF3
 {
     public interface IPresentationResource
     {
-        List<JSONLDString> Label { get; set; }
+        JSONLDString Label { get; set; }
         List<Metadata> Metadata { get; set; }
         List<JSONLDString> Description { get; set; }
         List<ImageResource> Thumbnail { get; set; }

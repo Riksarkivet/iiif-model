@@ -85,10 +85,10 @@ namespace Digirati.IIIF3.Serialisation
         private void PopulateBase(IPresentationResource iiifResource, JObject jResource)
         {
             jResource["id"] = iiifResource.Id;
-            if (iiifResource.Label.HasContent())
-            {
-                jResource["label"] = ConvertList(iiifResource.Label);
-            }
+            //if (iiifResource.Label.HasContent())
+            //{
+            //    jResource["label"] = ConvertList(iiifResource.Label);
+            //}
             if (iiifResource.Description.HasContent())
             {
                 jResource["description"] = ConvertList(iiifResource.Description);

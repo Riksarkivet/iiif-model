@@ -1,13 +1,20 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+
+using LanguageMap = System.Collections.Generic.Dictionary<string, object>;
 
 namespace Digirati.IIIF3.Model.JSONLD
 {
     public class JSONLDString
     {
         private string singleValue;
-        private Dictionary<string, string> languageMap; 
+
+        private LanguageMap languageMap;
+
+        [JsonExtensionData]
+        public LanguageMap LanguageMap => languageMap;
 
         public JSONLDString(string value)
         {
@@ -16,15 +23,15 @@ namespace Digirati.IIIF3.Model.JSONLD
 
         public JSONLDString(string language, string value)
         {
-            languageMap = new Dictionary<string, string>
+            languageMap = new LanguageMap
             {
-                { language, value }
+                { language, new List<string>() { value } }
             };
             singleValue = value;
         }
 
 
-        public JSONLDString(Dictionary<string, string> languageMap)
+        public JSONLDString(LanguageMap languageMap)
         {
             this.languageMap = languageMap;
         }
@@ -41,17 +48,17 @@ namespace Digirati.IIIF3.Model.JSONLD
             return new JSONLDString(s);
         }
 
-        public string this[string language]
+        public List<string> this[string language]
         {
             get
             {
                 if (languageMap != null && languageMap.ContainsKey(language))
                 {
-                    return languageMap[language];
+                    return languageMap[language] as List<string>;
                 }
                 if (language == string.Empty)
                 {
-                    return singleValue;
+                    return new List<string>() { singleValue };
                 }
                 return null;
             }
@@ -59,9 +66,9 @@ namespace Digirati.IIIF3.Model.JSONLD
             {
                 if (languageMap == null)
                 {
-                    languageMap = new Dictionary<string, string>
+                    languageMap = new LanguageMap
                     {
-                        { string.Empty, singleValue }
+                        { string.Empty, new List<string> { singleValue } }
                     };
                 }
                 languageMap[language] = value;
@@ -76,7 +83,7 @@ namespace Digirati.IIIF3.Model.JSONLD
             }
             if (languageMap.ContainsKey(string.Empty))
             {
-                return languageMap[string.Empty];
+                return languageMap[string.Empty].ToString();
             }
             return string.Join(";", languageMap.Select(x => x.Key + "=" + x.Value));
         }
