@@ -3,18 +3,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using LanguageMap = System.Collections.Generic.Dictionary<string, object>;
+using LanguageMap = System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>>;
 
 namespace Digirati.IIIF3.Model.JSONLD
 {
     public class JSONLDString
     {
-        private string singleValue;
-
+        private readonly string singleValue;
         private LanguageMap languageMap;
 
         [JsonExtensionData]
-        public LanguageMap LanguageMap => languageMap;
+        public Dictionary<string, object> Output
+        {
+            get
+            {
+                LanguageMap totalMap = new LanguageMap();
+                if (languageMap != null)
+                    totalMap = new LanguageMap(languageMap);
+                if (singleValue != null)
+                    totalMap.Add("@none", new List<string> { singleValue });
+                return totalMap.ToDictionary(item => item.Key, item => item.Value as object);
+            }
+        }
 
         public JSONLDString(string value)
         {
@@ -27,7 +37,6 @@ namespace Digirati.IIIF3.Model.JSONLD
             {
                 { language, new List<string>() { value } }
             };
-            singleValue = value;
         }
 
 
@@ -38,13 +47,11 @@ namespace Digirati.IIIF3.Model.JSONLD
 
         public static implicit operator string(JSONLDString js)
         {
-            // string s = myJsonLDStringObject;
             return js.ToString();
         }
 
         public static implicit operator JSONLDString(string s)
         {
-            // JSONLDstring js = "hello";
             return new JSONLDString(s);
         }
 
@@ -54,9 +61,9 @@ namespace Digirati.IIIF3.Model.JSONLD
             {
                 if (languageMap != null && languageMap.ContainsKey(language))
                 {
-                    return languageMap[language] as List<string>;
+                    return languageMap[language];
                 }
-                if (language == string.Empty)
+                if (language == "@none")
                 {
                     return new List<string>() { singleValue };
                 }
@@ -66,10 +73,7 @@ namespace Digirati.IIIF3.Model.JSONLD
             {
                 if (languageMap == null)
                 {
-                    languageMap = new LanguageMap
-                    {
-                        { string.Empty, new List<string> { singleValue } }
-                    };
+                    languageMap = new LanguageMap();
                 }
                 languageMap[language] = value;
             }
@@ -81,11 +85,7 @@ namespace Digirati.IIIF3.Model.JSONLD
             {
                 return singleValue;
             }
-            if (languageMap.ContainsKey(string.Empty))
-            {
-                return languageMap[string.Empty].ToString();
-            }
-            return string.Join(";", languageMap.Select(x => x.Key + "=" + x.Value));
+            return string.Join(";", Output.Select(x => x.Key + "=" + string.Join("|", x.Value as List<string>)));
         }
 
         public override bool Equals(object obj)
