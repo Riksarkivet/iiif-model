@@ -17,6 +17,7 @@ namespace Digirati.IIIF3.Model.Types
         [JsonProperty(Order = 13)]
         public float Duration { get; set; }
         [JsonProperty(Order = 30)]
-        public List<AnnotationPage> Content { get; set; } 
+        public List<AnnotationPage> Content { get; set; }
+        public override string Type => "Canvas";
     }
 }

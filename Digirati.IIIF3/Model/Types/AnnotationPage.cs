@@ -12,5 +12,6 @@ namespace Digirati.IIIF3.Model.Types
         [JsonProperty(Order = 30)]
         public List<Annotation> Items { get; set; }
         public List<JSONLDString> Label { get; set; }
+        public override string Type => "AnnotationPage";
     }
 }

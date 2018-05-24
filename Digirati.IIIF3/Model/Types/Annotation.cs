@@ -17,6 +17,7 @@ namespace Digirati.IIIF3.Model.Types
         public Resource Body { get; set; }
         [JsonProperty(Order = 12)]
         public string Target { get; set; }
+        public override string Type => "Annotation";
 
     }
 }

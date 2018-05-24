@@ -13,5 +13,6 @@ namespace Digirati.IIIF3.Model.Types
         public string ViewingDirection { get; set; }
         [JsonProperty(Order = 30)]
         public List<Canvas> Canvases { get; set; }
+        public override string Type => "Sequence";
     }
 }
