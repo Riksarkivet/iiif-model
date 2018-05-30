@@ -32,3 +32,5 @@ _ReSharper*/
 !packages/repositories.config
 /export/
 obj/*/DesignTimeResolveAssemblyReferencesInput.cache
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json

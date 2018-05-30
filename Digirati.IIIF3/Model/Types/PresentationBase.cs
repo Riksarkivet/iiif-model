@@ -12,7 +12,7 @@ namespace Digirati.IIIF3.Model.Types
         [JsonProperty(Order = 11)]
         public JSONLDString Label { get; set; }
 
-        [JsonProperty(Order = 12)]
+        [JsonProperty(Order = 20)]
         public List<Metadata> Metadata { get; set; }
         
         public List<JSONLDString> Description { get; set; }
@@ -40,5 +40,7 @@ namespace Digirati.IIIF3.Model.Types
         public List<Resource> OtherContent { get; set; }
 
         public List<IPresentationResource> Within { get; set; }
+        [JsonProperty(Order = 15)]
+        public JSONLDString Summary { get; set; }
     }
 }

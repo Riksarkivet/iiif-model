@@ -10,14 +10,14 @@ namespace Digirati.IIIF3.Model.Types
 {
     public class Canvas : PresentationBase
     {
-        [JsonProperty(Order = 11)]
-        public int Width { get; set; }
         [JsonProperty(Order = 12)]
-        public int Height { get; set; }
+        public int Width { get; set; }
         [JsonProperty(Order = 13)]
+        public int Height { get; set; }
+        [JsonProperty(Order = 14)]
         public float Duration { get; set; }
         [JsonProperty(Order = 30)]
-        public List<AnnotationPage> Content { get; set; }
+        public List<AnnotationPage> Items { get; set; }
         public override string Type => "Canvas";
     }
 }

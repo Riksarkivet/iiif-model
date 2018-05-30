@@ -8,7 +8,7 @@ namespace Digirati.IIIF3.Model.JSONLD
         /// <summary>
         /// Only support external contexts for now; allow more than one
         /// </summary>
-        [JsonProperty(Order = 1)]
+        [JsonProperty(Order = 1, PropertyName = "@context")]
         public virtual List<string> Context { get; set; }
         [JsonProperty(Order = 2)]
         public string Id { get; set; }

@@ -20,19 +20,19 @@ namespace Digirati.IIIF3.Serialisation
             var jManifest = new JObject();
             jManifest["type"] = "Manifest";
             PopulateBase(manifest, jManifest);
-            AddSequences(manifest, jManifest);
+            //AddSequences(manifest, jManifest);
             return jManifest;
         }
 
-        private void AddSequences(Manifest manifest, JObject jManifest)
-        {
-            var sequences = new JArray();
-            foreach (var sequence in manifest.Sequences)
-            {
-                sequences.Add(ConvertSequence(sequence));
-            }
-            jManifest["sequences"] = sequences;
-        }
+        //private void AddSequences(Manifest manifest, JObject jManifest)
+        //{
+        //    var sequences = new JArray();
+        //    foreach (var sequence in manifest.Sequences)
+        //    {
+        //        sequences.Add(ConvertSequence(sequence));
+        //    }
+        //    jManifest["sequences"] = sequences;
+        //}
 
         private JToken ConvertSequence(Sequence sequence)
         {
