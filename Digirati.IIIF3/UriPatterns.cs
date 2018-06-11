@@ -2,6 +2,8 @@
 {
     public abstract class UriPatterns
     {
+        public const string JsonLdContext = "http://www.w3.org/ns/anno.jsonld";
+
         public const string Presentation2Context = "http://iiif.io/api/presentation/2/context.json";
         public const string Presentation3Context = "http://iiif.io/api/presentation/3/context.json";
 

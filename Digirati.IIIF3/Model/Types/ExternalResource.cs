@@ -8,9 +8,9 @@ namespace Digirati.IIIF3.Model.Types
 {
     public abstract class ExternalResource : JSONLDBase
     {
-        public List<JSONLDString> Label { get; set; }
+        public JSONLDString Label { get; set; }
         
-        public List<Profile> Profile { get; set; }
+        public string Profile { get; set; }
 
         public List<Service> Service { get; set; }
     }

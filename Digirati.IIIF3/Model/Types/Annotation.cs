@@ -11,12 +11,9 @@ namespace Digirati.IIIF3.Model.Types
     {
 
         public List<JSONLDString> Label { get; set; }
-        [JsonProperty(Order = 11)]
         public string Motivation { get; set; }
-        [JsonProperty(Order = 30)]
-        public Resource Body { get; set; }
-        [JsonProperty(Order = 12)]
         public string Target { get; set; }
+        public Resource Body { get; set; }
         public override string Type => "Annotation";
 
     }

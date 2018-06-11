@@ -9,38 +9,43 @@ namespace Digirati.IIIF3.Model.Types
 {
     public abstract class PresentationBase : JSONLDBase, IPresentationResource
     {
-        [JsonProperty(Order = 11)]
+        [JsonProperty(Order = -50)]
         public JSONLDString Label { get; set; }
 
-        [JsonProperty(Order = 20)]
+        [JsonProperty(Order = -50)]
         public List<Metadata> Metadata { get; set; }
-        
-        public List<JSONLDString> Description { get; set; }
 
+        [JsonProperty(Order = -50)]
+        public JSONLDString Summary { get; set; }
+
+        [JsonProperty(Order = -50)]
         public List<ImageResource> Thumbnail { get; set; }
 
-        public List<JSONLDString> Attribution { get; set; }
+        [JsonProperty(Order = -50)]
+        public List<string> Behavior { get; set; }
 
-        public List<string> License { get; set; }
+        [JsonProperty(Order = -50)]
+        public string Rights { get; set; }
 
+        [JsonProperty(Order = -50)]
+        public Metadata RequiredStatement { get; set; }
+
+        [JsonProperty(Order = -50)]
         public List<ImageResource> Logo { get; set; }
 
-        public List<Resource> Rendering { get; set; }
+        [JsonProperty(Order = -50)]
+        public Resource Homepage { get; set; }
 
-        public List<Resource> Related { get; set; }
+        [JsonProperty(Order = -50)]
+        public List<Service> Service { get; set; }
 
+        [JsonProperty(Order = -50)]
         public List<Resource> SeeAlso { get; set; }
 
-        public List<Service> Service { get; set; }
-        
-        public string ViewingHint { get; set; }
+        [JsonProperty(Order = -50)]
+        public List<Resource> Rendering { get; set; }
 
-        public string NavDate { get; set; }
-
-        public List<Resource> OtherContent { get; set; }
-
-        public List<IPresentationResource> Within { get; set; }
-        [JsonProperty(Order = 15)]
-        public JSONLDString Summary { get; set; }
+        [JsonProperty(Order = -50)]
+        public List<Resource> PartOf { get; set; }
     }
 }

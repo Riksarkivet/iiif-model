@@ -7,6 +7,6 @@ namespace Digirati.IIIF3.Model.Types
 {
     public class AudioResource : Resource
     {
-        public float Duration { get; set; }
+        public float? Duration { get; set; }
     }
 }

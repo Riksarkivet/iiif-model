@@ -11,19 +11,17 @@ namespace Digirati.IIIF3
     {
         JSONLDString Label { get; set; }
         List<Metadata> Metadata { get; set; }
-        List<JSONLDString> Description { get; set; }
+        JSONLDString Summary { get; set; }
         List<ImageResource> Thumbnail { get; set; }
-        List<JSONLDString> Attribution { get; set; }
-        List<string> License { get; set; }
+        Metadata RequiredStatement { get; set; }
+        string Rights { get; set; }
+        List<string> Behavior { get; set; }
         List<ImageResource> Logo { get; set; }
+        Resource Homepage { get; set; }
         List<Resource> Rendering { get; set; }
-        List<Resource> Related { get; set; }
-        List<Resource> SeeAlso { get; set; }
         List<Service> Service { get; set; }
-        string ViewingHint { get; set; }
-        string NavDate { get; set; }
-        List<Resource> OtherContent { get; set; }
-        List<IPresentationResource> Within { get; set; }
+        List<Resource> SeeAlso { get; set; }
+        List<Resource> PartOf { get; set; }
 
         /// <summary>
         /// Only support external contexts for now; allow more than one

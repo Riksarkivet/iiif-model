@@ -7,8 +7,8 @@ namespace Digirati.IIIF3.Model.Types
 {
     public class VideoResource : Resource
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public float Duration { get; set; }
+        public int? Width { get; set; }
+        public int? Height { get; set; }
+        public float? Duration { get; set; }
     }
 }

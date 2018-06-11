@@ -30,9 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,6 +46,7 @@
     <Compile Include="IPresentationJsonConverter.cs" />
     <Compile Include="Model\Types\Annotation.cs" />
     <Compile Include="Model\Types\AnnotationPage.cs" />
+    <Compile Include="Serialisation\Defaults.cs" />
     <Compile Include="Serialisation\SerialisationHelpers.cs" />
     <Compile Include="UriPatterns.cs" />
     <Compile Include="Model\JSONLD\JSONLDString.cs" />
@@ -62,7 +62,6 @@
     <Compile Include="Model\Types\Range.cs" />
     <Compile Include="Model\Types\Resource.cs" />
     <Compile Include="Model\Types\ExternalResource.cs" />
-    <Compile Include="Model\Types\Sequence.cs" />
     <Compile Include="Model\Types\Service.cs" />
     <Compile Include="Model\Types\VideoResource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
