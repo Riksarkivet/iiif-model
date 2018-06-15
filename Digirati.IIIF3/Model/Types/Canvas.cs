@@ -12,9 +12,9 @@ namespace Digirati.IIIF3.Model.Types
     {
         public string NavDate { get; set; }
 
-        public int Width { get; set; }
+        public int? Width { get; set; }
 
-        public int Height { get; set; }
+        public int? Height { get; set; }
 
         public float? Duration { get; set; }
 
